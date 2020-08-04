@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloMainController {
 
-    @RequestMapping("/handover")
-    String handover() {
-        return "Handover completed!";
-    }
+    //    @RequestMapping("/handover")
+    //    String handover() throws Exception {
+    //        new HandoverStarter();
+    //        return "Handover completed!";
+    //    }
 
     @RequestMapping("/")
     String hello() {

@@ -3,7 +3,7 @@ package it.fabioformosa.lab.springhandover;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/plugin")
 public class HelloPluginController {
     //    @Autowired
     //    NamedParameterJdbcTemplate jdbcTemplate;
