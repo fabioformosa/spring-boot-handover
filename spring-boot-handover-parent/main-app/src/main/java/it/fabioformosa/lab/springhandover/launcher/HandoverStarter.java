@@ -1,21 +1,28 @@
 package it.fabioformosa.lab.springhandover.launcher;
 
+import java.util.Optional;
+
 import org.springframework.boot.loader.archive.Archive;
 
 public class HandoverStarter {
 
-    //    public HandoverStarter() throws Exception {
+    //    static public void main(String[] args) throws Exception {
     //        JarLoader jarLoader = new JarLoader();
     //        Archive archive = jarLoader.load();
     //        ExternalJarLauncher externalJarLauncher = new ExternalJarLauncher(archive);
     //        externalJarLauncher.launchApplication(new String[1]);
     //    }
 
-    public HandoverStarter(String[] args) throws Exception {
+    static public void main(String[] args) throws Exception {
         JarLoader jarLoader = new JarLoader();
-        Archive archive = jarLoader.load();
-        ExternalJarLauncher externalJarLauncher = new ExternalJarLauncher(archive);
-        externalJarLauncher.launchApplication(args);
+        Optional<Archive> archive = jarLoader.load();
+        archive.map(ExternalJarLauncher::new).ifPresent(externalJarLauncher -> {
+            try {
+                externalJarLauncher.launchApplication(args);
+            } catch (Exception e) {
+                new RuntimeException(e);
+            }
+        });
     }
 
 }

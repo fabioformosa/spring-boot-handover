@@ -15,8 +15,13 @@ public class ExternalJarLauncher extends JarLauncher {
     protected ClassLoader createClassLoader(URL[] urls) throws Exception {
         //        return new HandoverLaunchedURLClassLoader(isExploded(), urls, getClass().getClassLoader());
 
+        //        ClassLoader parent = getClass().getClassLoader();
+        //        ClassLoader mainAppClassLoader = new DelegatingMainAppClassLoader(parent);
+        //        return new HandoverLaunchedURLClassLoader(isExploded(), urls, mainAppClassLoader);
+
         //        TomcatURLStreamHandlerFactory.disable();
-        return new HandoverLaunchedURLClassLoader(isExploded(), urls, null);
+
+        return new HandoverLaunchedURLClassLoader(isExploded(), urls, getClass().getClassLoader());
     }
 
     public void launchApplication(String[] args) throws Exception {

@@ -13,12 +13,14 @@ public class AppMain {
     public static void main(String[] args) throws Exception {
         SpringApplication.run(AppMain.class, args);
 
-        Thread thread = new Thread(() -> {
-            try {
-                new HandoverStarter(args);
-            } catch (Exception e) {
-            }
-        });
-        thread.run();
+        HandoverStarter.main(args);
+
+        //        Thread thread = new Thread(() -> {
+        //            try {
+        //                new HandoverStarter(args);
+        //            } catch (Exception e) {
+        //            }
+        //        });
+        //        thread.run();
     }
 }
