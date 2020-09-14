@@ -28,6 +28,8 @@ When the bootstrap completes, try to open by browser:
 * `http://localhost:8082` -> to get `Hello World by Main App!`
 * `http://localhost:8081` -> to get `springboot-handover-puglin`
 
+You can also test the handover running the junit test: `it.fabioformosa.lab.springhandover.SpringHandoverTest`
+
 ## LIMITATIONS
 
 Currently, the only way to prove the handover is embedded the main app in a jetty and the plugin in a tomcat (or vice versa).
