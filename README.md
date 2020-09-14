@@ -32,4 +32,4 @@ You can also test the handover running the junit test: `it.fabioformosa.lab.spri
 
 ## LIMITATIONS
 
-Currently, the only way to prove the handover is embedded the main app in a jetty and the plugin in a tomcat (or vice versa).
+Currently, the only way to prove the handover is to embed the main app in a jetty server and the plugin in a tomcat server (or vice versa).
